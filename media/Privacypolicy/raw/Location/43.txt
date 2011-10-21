@@ -1,1 +1,0 @@
-The location information that we use will be your approximate location based on the nearest mobile cell site. As a result, it will change as you move around with your mobile phone

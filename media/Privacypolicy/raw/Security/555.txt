@@ -1,1 +1,0 @@
-Use of secure connections using SSL to safeguard information when transmitted from your Web browser to RealNetworks

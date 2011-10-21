@@ -1,1 +1,0 @@
-Accounts which are SSL enabled ensure that the responses of survey respondents are transmitted over a secure, encrypted connection

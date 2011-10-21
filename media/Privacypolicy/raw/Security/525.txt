@@ -1,1 +1,0 @@
-When a user accesses secured areas of our site, Secure Sockets Layer (SSL) technology protects user information using both server authentication and data encryption, ensuring that user data is safe, secure, and available only to authorized persons

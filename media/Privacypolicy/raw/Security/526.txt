@@ -1,1 +1,0 @@
-SurveyMonkey requires users to create a unique user name and password that must be entered each time a user logs on. SurveyMonkey issues a session "cookie" only to record encrypted authentication information for the duration of a specific session. The session cookie does not include either the username or password of the user
