@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block page_title %}
+<h1>{% trans "Results" %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<table>
+  <tr>
+    <td>Word</td>
+    <td>{{ word }}</td>
+  </tr>
+  <tr>
+    <td>Corpus</td>
+    <td>{{ corpus.name }}</td>
+  </tr>
+  <tr>
+    <td>Count</td>
+    <td>{{ count }}
+      </tr>
+</table>
+{% endblock %}

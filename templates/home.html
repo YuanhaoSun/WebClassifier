@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+
+{% block page_title %}
+<h1>Classify privacy policy paragraph</h1>
+{% endblock %}
+
+
+{% block content %}
+<div class="countWordsForm">
+  <form method="post" action="{% url classify %}">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <td width="100px">Classifier</td>
+        <td><select name="corpus">
+            {% for text in texts %}
+            <option value="{{ forloop.counter0 }}">{{ text.name }}</option>
+            {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td>Text</td>
+        <td><input type="text" name="word" size="100"/> </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" value="Classify"/></td>
+      </tr>
+    </table>
+  </form>
+</div>
+{% endblock %}
