@@ -3,23 +3,23 @@
 {% load i18n %}
 
 {% block page_title %}
-<h1>{% trans "Results" %}</h1>
+<h1>{% trans "Result" %}</h1>
 {% endblock %}
 
 
 {% block content %}
 <table>
   <tr>
-    <td>Word</td>
+    <td>Paragraph</td>
     <td>{{ word }}</td>
   </tr>
   <tr>
-    <td>Corpus</td>
-    <td>{{ corpus.name }}</td>
+    <td>Classifier</td>
+    <td>{{ algo }}</td>
   </tr>
   <tr>
-    <td>Count</td>
-    <td>{{ count }}
+    <td>Category</td>
+    <td>{{ category }}
       </tr>
 </table>
 {% endblock %}

@@ -17,9 +17,9 @@
     <table>
       <tr>
         <td width="100px">Classifier</td>
-        <td><select name="corpus">
+        <td><select name="class_algo">
             {% for text in texts %}
-            <option value="{{ forloop.counter0 }}">{{ text.name }}</option>
+            <option value="{{ forloop.counter0 }}">{{ text }}</option>
             {% endfor %}
         </td>
       </tr>
