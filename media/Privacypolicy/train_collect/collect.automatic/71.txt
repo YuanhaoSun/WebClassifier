@@ -1,0 +1,1 @@
+As is true of most websites, we gather some information automatically and store it in log files. This information includes Internet Protocol (IP) addresses, browser type and language, Internet service provider (ISP), referring and exit pages, operating system, date/time stamp, and clickstream data.

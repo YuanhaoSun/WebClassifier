@@ -1,0 +1,1 @@
+Once a child states that his/her age is under 13, we do not collect or store any personally identifiable information such as name, address, or email address

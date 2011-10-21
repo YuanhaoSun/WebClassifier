@@ -1,0 +1,1 @@
+In order to access some Microsoft services, you will be asked to sign in with an e-mail address and password, which we refer to as your Windows Live ID. By signing in on one Microsoft site or service, you may be automatically signed into other Microsoft sites and services that use Windows Live ID. For more information, see the Windows Live ID privacy supplement. 

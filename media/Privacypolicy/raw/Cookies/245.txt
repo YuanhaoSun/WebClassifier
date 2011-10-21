@@ -1,0 +1,1 @@
+We may use "cookies" on or in conjunction with our website to help OpenDNS identify and track visitors, their usage of OpenDNS websites, and their website access preferences. A cookie is a string of information that a website stores on a visitor's computer, and that the visitor's browser provides to the website each time the visitor returns

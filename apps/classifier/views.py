@@ -7,6 +7,8 @@ from nltk.book import *
 from hello import Hellow
 hi = Hellow()
 
+from classifier import classify
+
 texts = [text1, text2, text3, text4, text5, text6, text7, text8, hi]
 
 def home(request):

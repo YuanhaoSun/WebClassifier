@@ -1,0 +1,1 @@
+Passwords and credit card information are always sent over secure, encrypted SSL connections

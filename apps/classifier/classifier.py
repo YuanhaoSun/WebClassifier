@@ -40,19 +40,25 @@ share_categories = ['share.law', 'share.ma', 'share.statement', 'share.third.par
 
 
 print __doc__
+# print __file__
 
 
 # Load all training datasets
 print "Loading privacy policy datasets..."
-data_train = load_files('Privacypolicy/raw', categories = categories,
+data_train = load_files('D:/Dev/Django/classify/media/Privacypolicy/raw', 
+                        categories = categories,
                         shuffle = True, random_state = 42)
-ca_train = load_files('Privacypolicy/train_ca', categories = ca_categories,
+ca_train = load_files('D:/Dev/Django/classify/media/Privacypolicy/train_ca', 
+                        categories = ca_categories,
                         shuffle = True, random_state = 42)
-collect_train = load_files('Privacypolicy/train_collect', categories = collect_categories,
+collect_train = load_files('D:/Dev/Django/classify/media/Privacypolicy/train_collect', 
+                        categories = collect_categories,
                         shuffle = True, random_state = 42)
-cookies_train = load_files('Privacypolicy/train_cookies', categories = cookies_categories,
+cookies_train = load_files('D:/Dev/Django/classify/media/Privacypolicy/train_cookies', 
+                        categories = cookies_categories,
                         shuffle = True, random_state = 42)
-share_train = load_files('Privacypolicy/train_share', categories = share_categories,
+share_train = load_files('D:/Dev/Django/classify/media/Privacypolicy/train_share', 
+                        categories = share_categories,
                         shuffle = True, random_state = 42)
 print 'Data loaded!'
 print
@@ -129,6 +135,7 @@ train_time = time() - t0
 print "Train time: %0.3fs" % train_time
 print
 
+
 # Test: Predict on new texts
 docs_new = ["Eli Lilly and Company complies with the U.S.-EU Safe Harbor Framework and the U.S.-Swiss Safe Harbor Framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal information from European Union member countries and Switzerland. Eli Lilly and Company has certified that it adheres to the Safe Harbor Privacy Principles of notice, choice, onward transfer, security, data integrity, access, and enforcement. To learn more about the Safe Harbor program, and to view Eli Lilly and Company's certification, please visit", 
             'Through this website, you may be asked to voluntarily provide to us information that can identify or locate you, such as your name, address, telephone number, e-mail address, and other similar information ("Personal Information"). You may always refuse to provide Personal Information to us, but this may lead to our inability to provide you with certain information, products or services.',
@@ -146,10 +153,16 @@ docs_new = ["Eli Lilly and Company complies with the U.S.-EU Safe Harbor Framewo
             'We may update this Privacy Statement from time to time. When we do update it, for your convenience, we will make the updated statement available on this page. We will always handle your Personal Information in accordance with the Privacy Statement in effect at the time it was collected. We will not make any materially different use or new disclosure of your Personal Information unless we notify you and give you an opportunity to object',
             'If you have any questions or comments about this Privacy Statement, please contact us by writing to:',
             ]
-X_new = vectorizer.transform(docs_new)
-predicted = clf.predict(X_new)
 
-for doc, category in zip(docs_new, predicted):
+
+# Change to a functoin
+
+def classify(text):
+    docs_new = [text]
+    X_new = vectorizer.transform(docs_new)
+    predicted = clf.predict(X_new)
+
+    for doc, category in zip(docs_new, predicted):
         if data_train.target_names[category] == 'CA':
             # Process the text into vector
             doc_li = [doc]
@@ -157,41 +170,28 @@ for doc, category in zip(docs_new, predicted):
             # Predict using the trained L2 classifier
             L2_predicted = clf_ca.predict(X_new_l2)
             for category_l2 in L2_predicted:
-                print '%r => %s => %s' % (doc, data_train.target_names[category], 
+                return '%r => %s => %s' % (doc, data_train.target_names[category], 
                                         ca_train.target_names[category_l2])
-                print
-
         elif data_train.target_names[category] == 'Collect':
             doc_li = [doc]
             X_new_l2 = vectorizer.transform(doc_li)
             L2_predicted = clf_ca.predict(X_new_l2)
             for category_l2 in L2_predicted:
-                print '%r => %s => %s' % (doc, data_train.target_names[category], 
-                                        collect_train.target_names[category_l2])
-                print                                        
-
+                return '%r => %s => %s' % (doc, data_train.target_names[category], 
+                                        collect_train.target_names[category_l2])                                        
         elif data_train.target_names[category] == 'Cookies':
             doc_li = [doc]
             X_new_l2 = vectorizer.transform(doc_li)
             L2_predicted = clf_ca.predict(X_new_l2)
             for category_l2 in L2_predicted:
-                print '%r => %s => %s' % (doc, data_train.target_names[category], 
+                return '%r => %s => %s' % (doc, data_train.target_names[category], 
                                         cookies_train.target_names[category_l2])
-                print
-
         elif data_train.target_names[category] == 'Share':
             doc_li = [doc]
             X_new_l2 = vectorizer.transform(doc_li)
             L2_predicted = clf_share.predict(X_new_l2)
             for category_l2 in L2_predicted:
-                print '%r => %s => %s' % (doc, data_train.target_names[category], 
+                return '%r => %s => %s' % (doc, data_train.target_names[category], 
                                         share_train.target_names[category_l2])
-                print
-
         else:
-            print '%r => %s' % (doc, data_train.target_names[category])
-            print
-
-
-#Predict
-# pred = clf.predict(X_test)
+            return '%r => %s' % (doc, data_train.target_names[category])

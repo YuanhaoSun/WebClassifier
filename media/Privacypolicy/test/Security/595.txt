@@ -1,0 +1,1 @@
+Groupon has implemented an information security program that contains administrative, technical and physical controls that are designed to reasonably safeguard Personal Information. For example, we use industry-standard encryption technology to secure Financial Account Information when it is being transmitted over the Internet.

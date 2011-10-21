@@ -1,0 +1,1 @@
+You can opt out of receiving SMS messages by texting STOP to the number We send from for that particular SMS program. In some cases a preference management page will also be available under the "Help" menu of the game that is offering the SMS program. When We receive an opt-out message from you for SMS messages, We may send a message confirming our receipt of your opt-out

@@ -1,0 +1,1 @@
+You can use your wireless device to obtain a wide array of services based on the approximate location of the device, referred to as Location-Based Services, or LBS. The information you receive in connection with your use of LBS may include advertisements related to your request and your location;

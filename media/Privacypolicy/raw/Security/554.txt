@@ -1,0 +1,1 @@
+Use of encryption for sensitive personal information, such as credit card numbers and user names

@@ -1,0 +1,1 @@
+Most Microsoft Web sites use "cookies," which are small text files placed on your hard disk by a Web server. Cookies contain information that can later be read by a Web server in the domain that issued the cookie to you. 
